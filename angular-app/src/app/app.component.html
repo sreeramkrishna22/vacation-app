@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>Employee Type</th>
+      <th>Vacation Days</th>
+      <th>Work</th>
+      <th>Take Vacation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees; let i = index">
+      <td>{{ getEmployeeType(i) }}</td>
+      <td>{{ employee.vacationDays }}</td>
+      <td><input type="number" [(ngModel)]="daysWorked[i]"> <button (click)="work(i)">Work</button></td>
+      <td><input type="number" [(ngModel)]="daysTaken[i]"> <button (click)="takeVacation(i)">Take Vacation</button></td>
+    </tr>
+  </tbody>
+</table>
